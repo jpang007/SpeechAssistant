@@ -1,7 +1,8 @@
 import speech_recognition
 import speech_recognition as sr
 from os import system
-
+from pprint import pprint
+import requests
 #implement "What is the weather?"
 
 def main():
@@ -15,6 +16,9 @@ def main():
     try:
         #Weather command
         StringValue = r.recognize_sphinx(audio)
+        if (StringValue == "Weather"):
+            #import weather
+            #work in current location as a factor
         print("Sphinx thinks you said " + StringValue)
     except sr.UnknownValueError:
         print("Sphinx could not understand audio")
